@@ -83,4 +83,55 @@ a:hover {
   font-size: 0.85rem;
   color: #888;
   margin-bottom: 8px;
+} 
+
+/* Product Grid Layout */
+.woocommerce ul.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+/* Product Card */
+.woocommerce ul.products li.product {
+  background: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 18px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect */
+.woocommerce ul.products li.product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+/* Product title */
+.woocommerce ul.products li.product h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+  margin: 10px 0;
+}
+
+/* Price */
+.woocommerce ul.products li.product .price {
+  color: #2ecc71;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Add to cart button */
+.woocommerce ul.products li.product .button {
+  background: #2ecc71;
+  color: white;
+  border-radius: 6px;
+  padding: 10px 16px;
+  border: none;
+}
+
+.woocommerce ul.products li.product .button:hover {
+  background: #27ae60;
 }
