@@ -134,4 +134,18 @@ a:hover {
 
 .woocommerce ul.products li.product .button:hover {
   background: #27ae60;
+} 
+
+.about-section {
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  color: #444;
+} 
+
+.about-section img {
+  border-radius: 10px;
+  margin: 20px 0;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
