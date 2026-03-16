@@ -44,4 +44,43 @@ a:hover {
 @keyframes fadeIn {
   from {opacity: 0;}
   to {opacity: 1;}
+} 
+
+/* Latest News Post Style */
+.wp-block-post {
+  background: #f8f8f8;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.wp-block-post:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* Post Title */
+.wp-block-post-title a {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #222;
+  text-decoration: none;
+}
+
+.wp-block-post-title a:hover {
+  color: #4989f7;
+}
+
+/* Post excerpt */
+.wp-block-post-excerpt {
+  color: #555;
+  margin-top: 10px;
+}
+
+/* Date */
+.wp-block-post-date {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 8px;
 }
