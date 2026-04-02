@@ -86,56 +86,69 @@ a:hover {
 } 
 
 /* Product Grid Layout */
-.woocommerce ul.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
+.wc-block-product-template {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr); /* EXACTLY 3 per row */
+  gap: 30px;
 }
 
 /* Product Card */
-.woocommerce ul.products li.product {
-  background: #ffffff;
-  border: 1px solid #eee;
-  border-radius: 10px;
-  padding: 18px;
-  text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.wc-block-product {
+  padding: 24px; /* more space inside */
+  border-radius: 16px;
 }
 
-/* Hover effect */
-.woocommerce ul.products li.product:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+/* Hover = subtle lift */
+.wc-block-product:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.08);
 }
 
-/* Product title */
-.woocommerce ul.products li.product h2 {
-  font-size: 1.1rem;
+.wc-block-product img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Title */
+.wc-block-product__title {
+  font-size: 1rem;
   font-weight: 600;
-  color: #222;
-  margin: 10px 0;
+  color: #1a1a1a;
+  margin: 8px 0;
+  line-height: 1.4;
+} 
+
+.wp-block-woocommerce-product-collection {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Price */
-.woocommerce ul.products li.product .price {
-  color: #2ecc71;
-  font-weight: bold;
-  margin-bottom: 10px;
+.wc-block-product__price {
+  color: #16a34a; /* nicer green */
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 12px;
 }
 
-/* Add to cart button */
-.woocommerce ul.products li.product .button {
-  background: #2ecc71;
+.wc-block-product__add-to-cart .wp-block-button__link {
+  width: 100%;
+  text-align: center;
+  background: #16a34a;
   color: white;
-  border-radius: 6px;
-  padding: 10px 16px;
-  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-weight: 600;
+  transition: all 0.2s ease;
 }
 
-.woocommerce ul.products li.product .button:hover {
-  background: #27ae60;
-} 
-
+/* Hover */
+.wc-block-product__add-to-cart .wp-block-button__link:hover {
+  background: #15803d;
+  transform: scale(1.02);
+}
 .about-section {
   max-width: 900px;
   margin: 0 auto;
@@ -144,8 +157,276 @@ a:hover {
   color: #444;
 } 
 
+.wc-block-product {
+  backdrop-filter: blur(6px);
+}
+
 .about-section img {
   border-radius: 10px;
   margin: 20px 0;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+} 
+
+.wp-block-navigation a {
+    text-decoration: none;
+}
+
+/* Add underline only on hover */
+.wp-block-navigation a:hover {
+    text-decoration: underline;
+} 
+
+.contact-form-7 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* optional: better than full center */
+  padding-top: 80px;
+  height: 100vh;
+}
+
+.contact-form-7 form {
+  width: 100%;
+  max-width: 600px;
+}
+
+.contact-form-7 input,
+.contact-form-7 textarea {
+  width: 100%;
+}  
+
+/* Cover promo section */
+.wp-block-cover.promo-banner {
+  border-radius: 18px;
+  overflow: hidden;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  padding: 40px;
+}
+
+/* Dark overlay for readability */
+.wp-block-cover.promo-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+} 
+
+/* Content wrapper */
+.wp-block-cover.promo-banner .wp-block-cover__inner-container {
+  position: relative;
+  z-index: 2;
+  max-width: 500px;
+}
+
+/* Heading */
+.wp-block-cover.promo-banner h2 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #fff;
+}
+
+/* Text */
+.wp-block-cover.promo-banner p {
+  color: #f9fafb; /* slightly softer than pure white */
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  font-family: "Inter", sans-serif;
+  /*  THIS is the glow/shadow effect */
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+
+  /*  subtle polish */
+  letter-spacing: 0.2px;
+} 
+
+/* =========================
+   COUPON BLOCK WRAPPER
+========================= */
+.wc-block-components-totals-coupon {
+  background: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* =========================
+   COUPON LABEL
+========================= */
+.wc-block-components-totals-coupon label {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+  color: #1a1a1a;
+}
+
+/* =========================
+   INPUT FIELD
+========================= */
+.wc-block-components-totals-coupon input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+/* Focus state */
+.wc-block-components-totals-coupon input:focus {
+  border-color: #16a34a;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.15);
+}
+
+/* =========================
+   APPLY BUTTON
+========================= */
+.wc-block-components-totals-coupon button {
+  margin-top: 12px;
+  width: 100%;
+  background: #16a34a;
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Hover */
+.wc-block-components-totals-coupon button:hover {
+  background: #15803d;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   SUCCESS MESSAGE
+========================= */
+.wc-block-components-totals-coupon .wc-block-components-notice-banner {
+  border-radius: 8px;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   APPLIED COUPON STYLE
+========================= */
+.wc-block-components-totals-coupon__list-item {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-weight: 500;
+  color: #166534;
+}
+
+/* Remove coupon button (X) */
+.wc-block-components-totals-coupon__remove {
+  color: #dc2626;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+
+
+.wp-block-cover.promo-banner::before {
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.7),
+    rgba(0,0,0,0.2)
+  );
+} 
+
+.wp-block-cover.promo-banner {
+  text-align: center;
+}
+
+.wp-block-media-text {
+  gap: 40px;
+  margin: 50px 0;
+  align-items: center;
+}
+
+/* Image styling */
+.wp-block-media-text img {
+  border-radius: 14px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Text content */
+.wp-block-media-text__content {
+  font-family: "Inter", sans-serif;
+}
+
+/* Heading inside block */
+.wp-block-media-text__content h2,
+.wp-block-media-text__content h3 {
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  color: #1a1a1a;
+}
+
+/* Paragraph inside media block */
+.wp-block-media-text__content p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #4b5563;
+} 
+
+/* =========================
+   PARAGRAPH TEXT
+========================= */
+.wp-block-post-content p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.08rem;
+  line-height: 1.8;
+  color: #374151;
+  margin-bottom: 18px;
+  max-width: 700px; /* keeps text readable */
+}
+
+/* Optional: center content nicely */
+.wp-block-post-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+} 
+
+.wp-block-media-text + p {
+  margin-top: 20px;
+} 
+
+.wp-block-post-content strong {
+  color: #111827;
+  font-weight: 600;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .wc-block-product-template {
+    grid-template-columns: repeat(2, 1fr);
+  } 
+  .wp-block-media-text {
+    grid-template-columns: 1fr !important;
+  }
+
+  .wp-block-media-text {
+    gap: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  .wc-block-product-template {
+    grid-template-columns: 1fr;
+  }
 }
