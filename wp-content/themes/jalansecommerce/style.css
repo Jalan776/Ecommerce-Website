@@ -347,23 +347,24 @@ a:hover {
   text-align: center;
 }
 
+/* RESET MEDIA & TEXT PROPERLY */
 .wp-block-media-text {
-  gap: 40px;
-  margin: 50px 0;
+  max-width: 1000px;
+  margin: 0 auto 60px auto; /* centers the block */
   align-items: center;
 }
 
-/* Image styling */
-.wp-block-media-text img {
-  border-radius: 14px;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+/* FIX TEXT COLUMN WIDTH */
+.wp-block-media-text__content {
+   text-align: left; /* keep paragraphs readable */
+  margin: 0 auto;
 }
 
-/* Text content */
-.wp-block-media-text__content {
-  font-family: "Inter", sans-serif;
+/* FIX IMAGE SO IT DOESN'T BREAK LAYOUT */
+.wp-block-media-text__media img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Heading inside block */
@@ -408,7 +409,10 @@ a:hover {
 .wp-block-post-content strong {
   color: #111827;
   font-weight: 600;
-}
+}  
+
+
+
 
 /* Tablet */
 @media (max-width: 900px) {
@@ -429,4 +433,4 @@ a:hover {
   .wc-block-product-template {
     grid-template-columns: 1fr;
   }
-}
+} 
