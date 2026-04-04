@@ -236,9 +236,7 @@ a:hover {
   letter-spacing: 0.2px;
 } 
 
-/* =========================
-   COUPON BLOCK WRAPPER
-========================= */
+/* COUPON BLOCK WRAPPER */
 .wc-block-components-totals-coupon {
   background: #ffffff;
   border: 1px solid #eee;
@@ -247,9 +245,7 @@ a:hover {
   margin-top: 20px;
 }
 
-/* =========================
-   COUPON LABEL
-========================= */
+/* COUPON LABEL */
 .wc-block-components-totals-coupon label {
   font-family: "Inter", sans-serif;
   font-weight: 600;
@@ -258,9 +254,7 @@ a:hover {
   color: #1a1a1a;
 }
 
-/* =========================
-   INPUT FIELD
-========================= */
+/* INPUT FIELD */
 .wc-block-components-totals-coupon input {
   width: 100%;
   padding: 12px 14px;
@@ -299,9 +293,8 @@ a:hover {
   transform: translateY(-1px);
 }
 
-/* =========================
-   SUCCESS MESSAGE
-========================= */
+/* 
+   SUCCESS MESSAGE */
 .wc-block-components-totals-coupon .wc-block-components-notice-banner {
   border-radius: 8px;
   margin-top: 10px;
@@ -629,11 +622,44 @@ header + .wp-site-blocks .wp-block-cover:first-of-type {
 /* Make sure product card allows absolute positioning */
 .wc-block-grid__product {
   position: relative;
+} 
+
+/* Gadgets Grid */
+.gadgets-loop .wp-block-post-template {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
-/* =========================
-   TABLET (≤ 900px)
-========================= */
+/* Card */
+.gadgets-loop .wp-block-post {
+  background: #fff;
+  padding: 20px;
+  border-radius: 14px;
+  transition: 0.25s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+}
+
+.gadgets-loop .wp-block-post:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+/* Image */
+.gadgets-loop .wp-block-post-featured-image img {
+  border-radius: 10px;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Title */
+.gadgets-loop .wp-block-post-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* TABLET (≤ 900px)*/
 @media (max-width: 900px) {
 
   /* Product grid → 2 columns */
@@ -699,9 +725,8 @@ header + .wp-site-blocks .wp-block-cover:first-of-type {
   }
 }
 
-/* =========================
-   MOBILE (≤ 600px)
-========================= */
+/* 
+   MOBILE (≤ 600px) */
 @media (max-width: 600px) {
 
   /* FORCE product grid to 1 column */
